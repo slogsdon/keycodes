@@ -1,0 +1,15 @@
+<div><input id="input"></div>
+<pre><code id="code"></code></pre>
+
+<script>
+var code = document.getElementById("code");
+var input = document.getElementById("input");
+var printer = function (e) { code.value = code.value + "\n\n" + JSON.stringify(e); };
+input.addEventListener("keyup", printer);
+input.addEventListener("keydown", printer);
+input.addEventListener("keypressed", printer);
+input.addEventListener("input", printer);
+input.addEventListener("changed", printer);
+input.addEventListener("focus", printer);
+input.addEventListener("blur", printer);
+</script>

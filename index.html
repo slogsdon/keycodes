@@ -1,10 +1,12 @@
 <h1>keycodes</h1>
-<div><input id="input"></div>
+<div><input id="text" type="text"></div>
+<div><input id="phone" type="tel"></div>
 <pre><code id="code"></code></pre>
 
 <script>
 var code = document.getElementById("code");
-var input = document.getElementById("input");
+var text = document.getElementById("text");
+var phone = document.getElementById("phone");
 var printer = function (e) {
   code.appendChild(document.createTextNode("\n\n"));
   code.appendChild(document.createTextNode(JSON.stringify({
@@ -13,11 +15,20 @@ var printer = function (e) {
     key: e.key
   })));
 };
-input.addEventListener("keyup", printer);
-input.addEventListener("keydown", printer);
-input.addEventListener("keypressed", printer);
-input.addEventListener("input", printer);
-input.addEventListener("changed", printer);
-input.addEventListener("focus", printer);
-input.addEventListener("blur", printer);
+
+text.addEventListener("keyup", printer);
+text.addEventListener("keydown", printer);
+text.addEventListener("keypressed", printer);
+text.addEventListener("input", printer);
+text.addEventListener("changed", printer);
+text.addEventListener("focus", printer);
+text.addEventListener("blur", printer);
+
+phone.addEventListener("keyup", printer);
+phone.addEventListener("keydown", printer);
+phone.addEventListener("keypressed", printer);
+phone.addEventListener("input", printer);
+phone.addEventListener("changed", printer);
+phone.addEventListener("focus", printer);
+phone.addEventListener("blur", printer);
 </script>

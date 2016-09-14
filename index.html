@@ -12,7 +12,10 @@ var printer = function (e) {
   code.appendChild(document.createTextNode(JSON.stringify({
     keyCode: e.keyCode,
     keyIdentifier: e.keyIdentifier,
-    key: e.key
+    key: e.key,
+    charCode: e.charCode,
+    code: e.code,
+    location: e.location
   })));
 };
 

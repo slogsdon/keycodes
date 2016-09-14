@@ -5,7 +5,10 @@
 <script>
 var code = document.getElementById("code");
 var input = document.getElementById("input");
-var printer = function (e) { code.value = code.value + "\n\n" + JSON.stringify(e); };
+var printer = function (e) {
+  code.appendChild(document.createTextNode("\n\n"));
+  code.appendChild(document.createTextNode(JSON.stringify(e)));
+};
 input.addEventListener("keyup", printer);
 input.addEventListener("keydown", printer);
 input.addEventListener("keypressed", printer);
